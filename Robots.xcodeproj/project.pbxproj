@@ -14,6 +14,7 @@
 		B4EAA4511A0E85D900A2BB0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4EAA4501A0E85D900A2BB0B /* Images.xcassets */; };
 		B4EAA4541A0E85D900A2BB0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EAA4521A0E85D900A2BB0B /* LaunchScreen.xib */; };
 		B4EAA4601A0E85D900A2BB0B /* RobotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA45F1A0E85D900A2BB0B /* RobotsTests.m */; };
+		B4EAA46C1A0E89FC00A2BB0B /* RBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		B4EAA4591A0E85D900A2BB0B /* RobotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4EAA45E1A0E85D900A2BB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4EAA45F1A0E85D900A2BB0B /* RobotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotsTests.m; sourceTree = "<group>"; };
+		B4EAA46A1A0E89FC00A2BB0B /* RBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBItem.h; sourceTree = "<group>"; };
+		B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		B4EAA4371A0E85D900A2BB0B = {
 			isa = PBXGroup;
 			children = (
+				B4EAA4691A0E884D00A2BB0B /* Model */,
 				B4EAA4421A0E85D900A2BB0B /* Robots */,
 				B4EAA45C1A0E85D900A2BB0B /* RobotsTests */,
 				B4EAA4411A0E85D900A2BB0B /* Products */,
@@ -119,6 +123,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B4EAA4691A0E884D00A2BB0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4EAA46A1A0E89FC00A2BB0B /* RBItem.h */,
+				B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +176,7 @@
 		B4EAA4381A0E85D900A2BB0B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = RB;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Euclid Software, LLC";
 				TargetAttributes = {
@@ -221,6 +235,7 @@
 			files = (
 				B4EAA44C1A0E85D900A2BB0B /* ViewController.m in Sources */,
 				B4EAA4491A0E85D900A2BB0B /* AppDelegate.m in Sources */,
+				B4EAA46C1A0E89FC00A2BB0B /* RBItem.m in Sources */,
 				B4EAA4461A0E85D900A2BB0B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
