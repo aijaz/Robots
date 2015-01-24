@@ -15,6 +15,10 @@
 		B4EAA4541A0E85D900A2BB0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4EAA4521A0E85D900A2BB0B /* LaunchScreen.xib */; };
 		B4EAA4601A0E85D900A2BB0B /* RobotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA45F1A0E85D900A2BB0B /* RobotsTests.m */; };
 		B4EAA46C1A0E89FC00A2BB0B /* RBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */; };
+		B4EAA46F1A0E8E2100A2BB0B /* RBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46E1A0E8E2100A2BB0B /* RBPlayer.m */; };
+		B4EAA4721A0E94AA00A2BB0B /* RBRobot.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4711A0E94AA00A2BB0B /* RBRobot.m */; };
+		B4EAA4751A0E94D000A2BB0B /* RBDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4741A0E94D000A2BB0B /* RBDebris.m */; };
+		B4EAA4781A0E963F00A2BB0B /* RBArena.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4771A0E963F00A2BB0B /* RBArena.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,14 @@
 		B4EAA45F1A0E85D900A2BB0B /* RobotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RobotsTests.m; sourceTree = "<group>"; };
 		B4EAA46A1A0E89FC00A2BB0B /* RBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBItem.h; sourceTree = "<group>"; };
 		B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBItem.m; sourceTree = "<group>"; };
+		B4EAA46D1A0E8E2100A2BB0B /* RBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBPlayer.h; sourceTree = "<group>"; };
+		B4EAA46E1A0E8E2100A2BB0B /* RBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPlayer.m; sourceTree = "<group>"; };
+		B4EAA4701A0E94AA00A2BB0B /* RBRobot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBRobot.h; sourceTree = "<group>"; };
+		B4EAA4711A0E94AA00A2BB0B /* RBRobot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBRobot.m; sourceTree = "<group>"; };
+		B4EAA4731A0E94D000A2BB0B /* RBDebris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDebris.h; sourceTree = "<group>"; };
+		B4EAA4741A0E94D000A2BB0B /* RBDebris.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDebris.m; sourceTree = "<group>"; };
+		B4EAA4761A0E963F00A2BB0B /* RBArena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBArena.h; sourceTree = "<group>"; };
+		B4EAA4771A0E963F00A2BB0B /* RBArena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBArena.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,14 @@
 			children = (
 				B4EAA46A1A0E89FC00A2BB0B /* RBItem.h */,
 				B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */,
+				B4EAA46D1A0E8E2100A2BB0B /* RBPlayer.h */,
+				B4EAA46E1A0E8E2100A2BB0B /* RBPlayer.m */,
+				B4EAA4701A0E94AA00A2BB0B /* RBRobot.h */,
+				B4EAA4711A0E94AA00A2BB0B /* RBRobot.m */,
+				B4EAA4731A0E94D000A2BB0B /* RBDebris.h */,
+				B4EAA4741A0E94D000A2BB0B /* RBDebris.m */,
+				B4EAA4761A0E963F00A2BB0B /* RBArena.h */,
+				B4EAA4771A0E963F00A2BB0B /* RBArena.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,10 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EAA4721A0E94AA00A2BB0B /* RBRobot.m in Sources */,
 				B4EAA44C1A0E85D900A2BB0B /* ViewController.m in Sources */,
+				B4EAA4751A0E94D000A2BB0B /* RBDebris.m in Sources */,
 				B4EAA4491A0E85D900A2BB0B /* AppDelegate.m in Sources */,
+				B4EAA46F1A0E8E2100A2BB0B /* RBPlayer.m in Sources */,
 				B4EAA46C1A0E89FC00A2BB0B /* RBItem.m in Sources */,
 				B4EAA4461A0E85D900A2BB0B /* main.m in Sources */,
+				B4EAA4781A0E963F00A2BB0B /* RBArena.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
