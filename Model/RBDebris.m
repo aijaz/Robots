@@ -10,4 +10,10 @@
 
 @implementation RBDebris
 
+-(NSString *)description {
+    return @"#";
+}
+
+
+
 @end

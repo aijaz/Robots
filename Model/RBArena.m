@@ -30,8 +30,8 @@
     self = [super init];
     if (self) {
         // custom initialization
-        _width = 9;
-        _height = 9;
+        _width = 19;
+        _height = 19;
         
         // _ _ _ _ _ _ _ _ _
         // 0 1 2 3 4 5 6 7 8
@@ -173,7 +173,25 @@
             [newRobotSet addObject:robot];
         }
         else {
-            // there is already something in the spot
+            // there is already something in the spot  // new
+            if ([self.board[robotY][robotX] class] == [RBPlayer class]) {
+                // there is the player there
+                [self.player updatePlayerStatus:YES];
+                // don't need to add the robot to the newRobotSet because the game is over
+                // We'll show the dead player there instead
+            }
+            else if ([self.board[robotY][robotX] class] == [RBRobot class]) {
+                // there's a robot there
+                RBRobot * previousRobot = self.board[robotY][robotX];
+                [newRobotSet removeObject:previousRobot];
+                RBDebris * newDebris = [[RBDebris alloc] init];
+                [self moveItem:newDebris toX:robotX andY:robotY];
+                [self.debris addObject:newDebris];
+            }
+            else if ([self.board[robotY][robotX] class] == [RBDebris class]) {
+                // there is debris there
+                // don't add this robot to the newRobotSet
+            }
         }
     }
     
@@ -220,8 +238,8 @@
     }
     
     // move the player to the center of the board
-    [self.player moveToNewX:self.playerStartX newY:self.playerStartY];
-    
+    [self moveItem:self.player toX:self.playerStartX andY:self.playerStartY]; // new
+
     
     // start with 10 robots, and increase by 3 every level
     NSInteger numRobots = 10 + ((self.level - 1) * 3);
@@ -384,7 +402,7 @@
     }
     
     n = 0;
-    // now try a buffer zone of 2
+    // now try a buffer zone of 1
     while (n < 100) {
         n++;
         NSInteger randomX = arc4random_uniform((UInt32) self.width);

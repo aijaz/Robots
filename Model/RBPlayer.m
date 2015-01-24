@@ -14,4 +14,14 @@
     _isDead = dead;
 }
 
+-(NSString *)description {
+    if (self.isDead) {
+        return @"X";
+    }
+    else {
+        return @"O";
+    }
+}
+
+
 @end

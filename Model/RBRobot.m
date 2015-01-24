@@ -10,4 +10,8 @@
 
 @implementation RBRobot
 
+-(NSString *)description {
+    return @"!";
+}
+
 @end

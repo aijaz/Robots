@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B411235B1A734F0700DB9D20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B411235A1A734F0700DB9D20 /* main.m */; };
+		B411235F1A7350C000DB9D20 /* RBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */; };
+		B41123601A7350C000DB9D20 /* RBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46E1A0E8E2100A2BB0B /* RBPlayer.m */; };
+		B41123611A7350C000DB9D20 /* RBRobot.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4711A0E94AA00A2BB0B /* RBRobot.m */; };
+		B41123621A7350C000DB9D20 /* RBDebris.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4741A0E94D000A2BB0B /* RBDebris.m */; };
+		B41123631A7350C000DB9D20 /* RBArena.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4771A0E963F00A2BB0B /* RBArena.m */; };
 		B4EAA4461A0E85D900A2BB0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4451A0E85D900A2BB0B /* main.m */; };
 		B4EAA4491A0E85D900A2BB0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA4481A0E85D900A2BB0B /* AppDelegate.m */; };
 		B4EAA44C1A0E85D900A2BB0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA44B1A0E85D900A2BB0B /* ViewController.m */; };
@@ -31,7 +37,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B41123561A734F0700DB9D20 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B41123581A734F0700DB9D20 /* RobotCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RobotCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		B411235A1A734F0700DB9D20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4EAA4401A0E85D900A2BB0B /* Robots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4EAA4441A0E85D900A2BB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4EAA4451A0E85D900A2BB0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B41123551A734F0700DB9D20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4EAA43D1A0E85D900A2BB0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,12 +102,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B41123591A734F0700DB9D20 /* RobotCLI */ = {
+			isa = PBXGroup;
+			children = (
+				B411235A1A734F0700DB9D20 /* main.m */,
+			);
+			path = RobotCLI;
+			sourceTree = "<group>";
+		};
 		B4EAA4371A0E85D900A2BB0B = {
 			isa = PBXGroup;
 			children = (
 				B4EAA4691A0E884D00A2BB0B /* Model */,
 				B4EAA4421A0E85D900A2BB0B /* Robots */,
 				B4EAA45C1A0E85D900A2BB0B /* RobotsTests */,
+				B41123591A734F0700DB9D20 /* RobotCLI */,
 				B4EAA4411A0E85D900A2BB0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +126,7 @@
 			children = (
 				B4EAA4401A0E85D900A2BB0B /* Robots.app */,
 				B4EAA4591A0E85D900A2BB0B /* RobotsTests.xctest */,
+				B41123581A734F0700DB9D20 /* RobotCLI */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +192,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B41123571A734F0700DB9D20 /* RobotCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B411235E1A734F0700DB9D20 /* Build configuration list for PBXNativeTarget "RobotCLI" */;
+			buildPhases = (
+				B41123541A734F0700DB9D20 /* Sources */,
+				B41123551A734F0700DB9D20 /* Frameworks */,
+				B41123561A734F0700DB9D20 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RobotCLI;
+			productName = RobotCLI;
+			productReference = B41123581A734F0700DB9D20 /* RobotCLI */;
+			productType = "com.apple.product-type.tool";
+		};
 		B4EAA43F1A0E85D900A2BB0B /* Robots */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4EAA4631A0E85D900A2BB0B /* Build configuration list for PBXNativeTarget "Robots" */;
@@ -200,6 +254,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Euclid Software, LLC";
 				TargetAttributes = {
+					B41123571A734F0700DB9D20 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					B4EAA43F1A0E85D900A2BB0B = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -224,6 +281,7 @@
 			targets = (
 				B4EAA43F1A0E85D900A2BB0B /* Robots */,
 				B4EAA4581A0E85D900A2BB0B /* RobotsTests */,
+				B41123571A734F0700DB9D20 /* RobotCLI */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +307,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B41123541A734F0700DB9D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B411235F1A7350C000DB9D20 /* RBItem.m in Sources */,
+				B41123601A7350C000DB9D20 /* RBPlayer.m in Sources */,
+				B41123611A7350C000DB9D20 /* RBRobot.m in Sources */,
+				B41123631A7350C000DB9D20 /* RBArena.m in Sources */,
+				B41123621A7350C000DB9D20 /* RBDebris.m in Sources */,
+				B411235B1A734F0700DB9D20 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4EAA43C1A0E85D900A2BB0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +373,29 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B411235C1A734F0700DB9D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B411235D1A734F0700DB9D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		B4EAA4611A0E85D900A2BB0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,6 +531,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B411235E1A734F0700DB9D20 /* Build configuration list for PBXNativeTarget "RobotCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B411235C1A734F0700DB9D20 /* Debug */,
+				B411235D1A734F0700DB9D20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B4EAA43B1A0E85D900A2BB0B /* Build configuration list for PBXProject "Robots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -453,6 +555,7 @@
 				B4EAA4651A0E85D900A2BB0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4EAA4661A0E85D900A2BB0B /* Build configuration list for PBXNativeTarget "RobotsTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +564,7 @@
 				B4EAA4681A0E85D900A2BB0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
