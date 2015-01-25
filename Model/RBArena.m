@@ -51,6 +51,7 @@
         // for each row create _width number of columns
         NSInteger h;
         for (h = 0; h < _height; h = h + 1) {
+            NSLog(@"h is %zd", h);
             NSMutableArray * row = [NSMutableArray arrayWithCapacity:_width];
             NSInteger w = 0;
             for (w = 0; w < _width; w++) {

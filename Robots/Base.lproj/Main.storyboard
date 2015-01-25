@@ -19,9 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc8-PQ-NHF">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hc8-PQ-NHF" customClass="ArenaView">
                                 <rect key="frame" x="0.0" y="28" width="320" height="320"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hc8-PQ-NHF" secondAttribute="height" multiplier="1:1" id="OOx-lO-mbF"/>
                                 </constraints>
@@ -34,7 +34,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O8-qI-YGl">
                                                 <rect key="frame" x="-0.5" y="0.0" width="43.5" height="43.5"/>
-                                                <color key="backgroundColor" red="0.1529411765" green="0.65098039220000004" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.87796954719999998" green="0.7319503705" blue="0.2603130072" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="nw">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -159,6 +159,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="arenaView" destination="hc8-PQ-NHF" id="Jpp-sW-1OG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
