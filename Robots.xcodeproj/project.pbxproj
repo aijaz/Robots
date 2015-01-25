@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40991051A74720A00F8A171 /* ArenaView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40991041A74720A00F8A171 /* ArenaView.m */; };
+		B40991081A74722D00F8A171 /* ItemLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = B40991071A74722D00F8A171 /* ItemLocation.m */; };
 		B411235B1A734F0700DB9D20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B411235A1A734F0700DB9D20 /* main.m */; };
 		B411235F1A7350C000DB9D20 /* RBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46B1A0E89FC00A2BB0B /* RBItem.m */; };
 		B41123601A7350C000DB9D20 /* RBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EAA46E1A0E8E2100A2BB0B /* RBPlayer.m */; };
@@ -50,6 +52,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B40991031A74720A00F8A171 /* ArenaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArenaView.h; sourceTree = "<group>"; };
+		B40991041A74720A00F8A171 /* ArenaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArenaView.m; sourceTree = "<group>"; };
+		B40991061A74722D00F8A171 /* ItemLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemLocation.h; sourceTree = "<group>"; };
+		B40991071A74722D00F8A171 /* ItemLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemLocation.m; sourceTree = "<group>"; };
 		B41123581A734F0700DB9D20 /* RobotCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RobotCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		B411235A1A734F0700DB9D20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4EAA4401A0E85D900A2BB0B /* Robots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Robots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40991021A74720A00F8A171 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B40991061A74722D00F8A171 /* ItemLocation.h */,
+				B40991071A74722D00F8A171 /* ItemLocation.m */,
+				B40991031A74720A00F8A171 /* ArenaView.h */,
+				B40991041A74720A00F8A171 /* ArenaView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B41123591A734F0700DB9D20 /* RobotCLI */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +130,7 @@
 		B4EAA4371A0E85D900A2BB0B = {
 			isa = PBXGroup;
 			children = (
+				B40991021A74720A00F8A171 /* View */,
 				B4EAA4691A0E884D00A2BB0B /* Model */,
 				B4EAA4421A0E85D900A2BB0B /* Robots */,
 				B4EAA45C1A0E85D900A2BB0B /* RobotsTests */,
@@ -326,6 +344,8 @@
 			files = (
 				B4EAA4721A0E94AA00A2BB0B /* RBRobot.m in Sources */,
 				B4EAA44C1A0E85D900A2BB0B /* ViewController.m in Sources */,
+				B40991051A74720A00F8A171 /* ArenaView.m in Sources */,
+				B40991081A74722D00F8A171 /* ItemLocation.m in Sources */,
 				B4EAA4751A0E94D000A2BB0B /* RBDebris.m in Sources */,
 				B4EAA4491A0E85D900A2BB0B /* AppDelegate.m in Sources */,
 				B4EAA46F1A0E8E2100A2BB0B /* RBPlayer.m in Sources */,
@@ -538,6 +558,7 @@
 				B411235D1A734F0700DB9D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4EAA43B1A0E85D900A2BB0B /* Build configuration list for PBXProject "Robots" */ = {
 			isa = XCConfigurationList;
