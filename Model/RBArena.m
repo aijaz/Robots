@@ -18,7 +18,7 @@
 @property (assign, nonatomic) NSInteger level;
 
 // a two-dimensional array that specifies the board
-@property (assign, nonatomic) NSMutableArray * board;
+@property (strong, nonatomic) NSMutableArray * board;
 
 @end
 
@@ -46,12 +46,13 @@
         _level = 1;
         
         // a board has _height number of rows
-        _board = [NSMutableArray arrayWithCapacity:_height];
+//        _board = [NSMutableArray arrayWithCapacity:_height];
+        _board = [[NSMutableArray alloc] init];
+
         
         // for each row create _width number of columns
         NSInteger h;
         for (h = 0; h < _height; h = h + 1) {
-            NSLog(@"h is %zd", h);
             NSMutableArray * row = [NSMutableArray arrayWithCapacity:_width];
             NSInteger w = 0;
             for (w = 0; w < _width; w++) {

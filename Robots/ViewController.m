@@ -32,13 +32,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // Set up the model
-//    self.arena = [[RBArena alloc] init];
-//    NSLog(@"\n%@", self.arena);
+    self.arena = [[RBArena alloc] init];
     
     
-    [self.arenaView setColumns:19 rows:19];
-//    [self.arenaView setColumns:self.arena.width rows:self.arena.height];
-//    [self.arenaView setPlayerLocation:[[ItemLocation alloc] initWithColumn:self.arena.playerStartX row:self.arena.playerStartY]];
+    [self.arenaView setColumns:self.arena.width rows:self.arena.height];
+    [self.arenaView setPlayerLocation:[[ItemLocation alloc] initWithColumn:self.arena.playerStartX row:self.arena.playerStartY]];
 
 }
 
