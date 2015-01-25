@@ -13,12 +13,14 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
+        // Create an arena
         RBArena * arena = [[RBArena alloc] init];
+        NSLog(@"\n%@", arena);
 
-        
         while (arena.player.isDead == NO) {
             NSLog(@"\n%@", arena);
             NSDictionary * validMoves = [arena validMoves];
+     
             
             // print valid moves
             NSLog(@"Valid Moves\n"
@@ -35,8 +37,10 @@ int main(int argc, const char * argv[]) {
                   , (validMoves[@8])? @"8" : @"-"
                   , (validMoves[@9])? @"9" : @"-"
                   );
+            /*
+             */
             
-            char move[256];
+            char move[8];
             
             printf("Enter move: ");
             scanf("%s", move);
@@ -73,7 +77,17 @@ int main(int argc, const char * argv[]) {
                 case '9':
                     [arena movePlayerToSpot:9];
                     break;
-                    
+                case 't':
+                    [arena teleport];
+                    break;
+                case 's':
+                    if (arena.safeTeleportsLeft > 0) {
+                        [arena safeTeleport];
+                    }
+                    else {
+                        NSLog(@"Sorry, out of safe teleports");
+                    }
+                    break;
                 default:
                     break;
             }
@@ -83,9 +97,17 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"Game over");
                 break;
             }
+            if ([arena.robots count] == 0) {
+                NSLog(@"\n%@", arena);
+                NSLog(@"LEVEL UP!");
+                [arena startLevel:arena.level + 1];
+                printf("Hit enter to continue ");
+                scanf("%s", move);
+            }
             
         }
     }
+    
     return 0;
 }
 

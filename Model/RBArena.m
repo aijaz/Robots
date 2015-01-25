@@ -245,8 +245,8 @@
     NSInteger numRobots = 10 + ((self.level - 1) * 3);
     
     self.robots = [NSMutableSet setWithCapacity:numRobots];
-    self.debris = [NSMutableSet setWithCapacity:numRobots/2];
     // it takes 2 robots to collide and make 1 debris
+    self.debris = [NSMutableSet setWithCapacity:numRobots/2];
     
     while (numRobots > 0) {
         // add a robot to the board
@@ -339,6 +339,8 @@
         }
         [rows addObject:[row componentsJoinedByString:@""]];
     }
+    [rows addObject:@"\n"];
+    [rows addObject:[NSString stringWithFormat:@"Safe Teleports Left: %zd", self.safeTeleportsLeft]];
     return [rows componentsJoinedByString:@"\n"];
 }
 
@@ -386,6 +388,13 @@
                     if (y >= 0 && y < self.height && x >= 0 && x < self.width) {
                         if (self.board[y][x] != [NSNull null]) {
                             ok = NO;
+                            continue;
+                        }
+                        else {
+                            // This spot is okay,
+                            // But there is no guarantee that the other spots
+                            // in that 2 spot buffer are okay as well
+                            //
                         }
                     }
                 }
@@ -416,6 +425,13 @@
                     if (y >= 0 && y < self.height && x >= 0 && x < self.width) {
                         if (self.board[y][x] != [NSNull null]) {
                             ok = NO;
+                            continue;
+                        }
+                        else {
+                            // This spot is okay,
+                            // But there is no guarantee that the other spots
+                            // in that 1 spot buffer are okay as well
+                            //
                         }
                     }
                 }

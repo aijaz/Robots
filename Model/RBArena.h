@@ -35,11 +35,11 @@
 // robots
 @property (strong, nonatomic) NSMutableSet * robots;
 
-// debris
-@property (strong, nonatomic) NSMutableSet * debris;
-
 // player
 @property (strong, nonatomic) RBPlayer * player;
+
+// debris
+@property (strong, nonatomic) NSMutableSet * debris;
 
 
 // METHODS
