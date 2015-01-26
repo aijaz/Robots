@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="349" width="320" height="132"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZO3-Y3-vg0" userLabel="dPad">
-                                        <rect key="frame" x="94.5" y="0.5" width="131" height="131"/>
+                                        <rect key="frame" x="95" y="1" width="131" height="131"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O8-qI-YGl">
-                                                <rect key="frame" x="-0.5" y="0.0" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O8-qI-YGl">
+                                                <rect key="frame" x="-1" y="0.0" width="44" height="44"/>
                                                 <state key="normal" title="nw">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -41,8 +41,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtM-hc-7gz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMn-ri-jrp">
-                                                <rect key="frame" x="44" y="0.0" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMn-ri-jrp">
+                                                <rect key="frame" x="44" y="0.0" width="44" height="44"/>
                                                 <state key="normal" title="n">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -50,8 +50,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uuq-gN-IGi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-cb-Ifc">
-                                                <rect key="frame" x="88" y="0.0" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-cb-Ifc">
+                                                <rect key="frame" x="88" y="0.0" width="44" height="44"/>
                                                 <state key="normal" title="ne">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -59,8 +59,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bnJ-Rv-4ns"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8A-bc-4Me">
-                                                <rect key="frame" x="-0.5" y="44" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8A-bc-4Me">
+                                                <rect key="frame" x="-1" y="44" width="44" height="44"/>
                                                 <state key="normal" title="w">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -68,8 +68,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bND-3A-VBm"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIW-Ou-Pte">
-                                                <rect key="frame" x="44" y="44" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIW-Ou-Pte">
+                                                <rect key="frame" x="44" y="44" width="44" height="44"/>
                                                 <state key="normal" title="c">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -77,8 +77,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R65-Oj-zIt"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhG-ZB-8e3">
-                                                <rect key="frame" x="88" y="44" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhG-ZB-8e3">
+                                                <rect key="frame" x="88" y="44" width="44" height="44"/>
                                                 <state key="normal" title="e">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -86,8 +86,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DIo-US-znT"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGb-AQ-zHd">
-                                                <rect key="frame" x="-0.5" y="88" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGb-AQ-zHd">
+                                                <rect key="frame" x="-1" y="88" width="44" height="44"/>
                                                 <state key="normal" title="sw">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -95,8 +95,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pBP-yH-NZo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-bw-FX5">
-                                                <rect key="frame" x="44" y="88" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-bw-FX5">
+                                                <rect key="frame" x="44" y="88" width="44" height="44"/>
                                                 <state key="normal" title="s">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -104,8 +104,8 @@
                                                     <action selector="handleMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="APN-qa-Ph1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-Zy-8ZQ">
-                                                <rect key="frame" x="88" y="88" width="43.5" height="43.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-Zy-8ZQ">
+                                                <rect key="frame" x="88" y="88" width="44" height="44"/>
                                                 <state key="normal" title="se">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -220,7 +220,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hc8-PQ-NHF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="0Mn-7n-1eu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hc8-PQ-NHF" secondAttribute="trailing" constant="-16" id="0rP-zL-ovF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hc8-PQ-NHF" secondAttribute="trailing" priority="900" constant="-16" id="0rP-zL-ovF"/>
                             <constraint firstItem="33F-rX-dIU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="1Th-ac-Shv"/>
                             <constraint firstItem="33F-rX-dIU" firstAttribute="height" secondItem="7uW-um-CET" secondAttribute="height" id="Eph-P5-RzF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="33F-rX-dIU" secondAttribute="bottom" constant="-1" id="QRN-bk-wLN"/>

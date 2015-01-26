@@ -30,8 +30,8 @@
     self = [super init];
     if (self) {
         // custom initialization
-        _width = 19;
-        _height = 19;
+        _width = 15;
+        _height = 15;
         
         // _ _ _ _ _ _ _ _ _
         // 0 1 2 3 4 5 6 7 8
