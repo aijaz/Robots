@@ -466,7 +466,8 @@
 
 // restart the game after the player dies (always from level 1)
 -(void) restartGame {
-    
+    [self.player updatePlayerStatus:NO];
+    [self startLevel:1];
 }
 
 

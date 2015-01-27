@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *waitButton;
 @property (assign, nonatomic) BOOL inWait;
 @property (strong, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UIButton *levelUpButton;
 
 @end
 
@@ -67,7 +68,10 @@
     [self.arenaView addGestureRecognizer:tap];
     UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [self.arenaView addGestureRecognizer:longPress];
-    
+
+    self.restartButton.hidden = YES;
+    self.levelUpButton.hidden = YES;
+
     
     [self refreshScreen];
 
@@ -77,6 +81,7 @@
 
 -(void) pan: (UIPanGestureRecognizer *) pan {
     if (self.timer) { return; }
+    if (self.arena.player.isDead) { return; }
     
     switch (pan.state) {
         case UIGestureRecognizerStateBegan: {
@@ -102,6 +107,7 @@
 
 -(void) tap: (UITapGestureRecognizer *) tap {
     if (self.timer) { return; }
+    if (self.arena.player.isDead) { return; }
     
     [self moveToSpot:5];
 }
@@ -109,6 +115,8 @@
 
 -(void) longPress: (UILongPressGestureRecognizer *) longPress {
     if (self.timer) { return; }
+    if (self.arena.player.isDead) { return; }
+
     
 }
 
@@ -224,10 +232,12 @@
 
 -(void) translateFromModelToView {
     
-    self.restartButton.hidden = YES;
     
     if (self.arena.player.isDead) {
         self.arenaView.gameOver = YES;
+        self.bombButton.hidden = YES;
+        self.teleportButton.hidden = YES;
+        self.waitButton.hidden = YES;
         self.restartButton.hidden = NO;
     }
     
@@ -262,20 +272,23 @@
         self.bombButton.enabled = NO;
     }
     
-    if ([self.arena.robots count] == 0) {
+    if ([self.arena.robots count] == 0 && !self.arena.player.isDead) {
         if (self.timer) {
             [self.timer invalidate];
             self.timer = nil;
         }
-        [self.arena startLevel:self.arena.level + 1];
-        [self translateFromModelToView];
+        self.levelUpButton.hidden = NO;
+        self.bombButton.hidden = YES;
+        self.teleportButton.hidden = YES;
+        self.waitButton.hidden = YES;
     }
     
 }
 
 - (IBAction)teleport:(UIButton *)sender {
     if (self.timer) { return; }
-    
+    if (self.arena.player.isDead) { return; }
+
     if (self.arena.safeTeleportsLeft) {
         [self.arena safeTeleport];
     }
@@ -290,11 +303,15 @@
 
 - (IBAction)bomb:(UIButton *)sender {
     if (self.timer) { return; }
-    
+    if (self.arena.player.isDead) { return; }
+
 }
 
 - (IBAction)wait:(id)sender {
     if (self.timer) { return; }
+    if (self.arena.player.isDead) { return; }
+    
+    [self moveToSpot:5];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                   target:self
@@ -303,6 +320,15 @@
                                                  repeats:YES];
     
     
+}
+
+- (IBAction)levelUp:(id)sender {
+    self.bombButton.hidden = NO;
+    self.teleportButton.hidden = NO;
+    self.waitButton.hidden = NO;
+    self.levelUpButton.hidden = YES;
+    [self.arena startLevel:self.arena.level + 1];
+    [self translateFromModelToView];
 }
 
 -(void) handleTimer: (id) sender {
@@ -318,9 +344,15 @@
 - (IBAction)restart:(id)sender {
     if (self.timer) { return; }
     
+    self.bombButton.hidden = NO;
+    self.teleportButton.hidden = NO;
+    self.waitButton.hidden = NO;
+    self.restartButton.hidden = YES;
+    
     [self.arena restartGame];
     self.arenaView.gameOver = NO;
     [self translateFromModelToView];
+    
 }
 
 @end

@@ -25,30 +25,6 @@
                                     <constraint firstAttribute="width" secondItem="hc8-PQ-NHF" secondAttribute="height" multiplier="1:1" id="OOx-lO-mbF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkQ-oQ-8be">
-                                <rect key="frame" x="138" y="428" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="8h3-k8-JKd"/>
-                                </constraints>
-                                <state key="normal" title="Bomb">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="bomb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah4-Ap-x1x"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-5F-1pD">
-                                <rect key="frame" x="260" y="428" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="BjC-lk-QqP"/>
-                                </constraints>
-                                <state key="normal" title="Wait">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="wait:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCC-YS-T3t"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 44" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roa-Ob-5JL">
                                 <rect key="frame" x="16" y="36" width="96" height="21"/>
                                 <constraints>
@@ -68,24 +44,97 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-yL-G8j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-yL-G8j">
                                 <rect key="frame" x="289" y="36" width="22" height="22"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alm-uv-bHp">
-                                <rect key="frame" x="16" y="428" width="87" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eic-to-EM6" userLabel="ButtonEnclosure">
+                                <rect key="frame" x="0.0" y="399" width="320" height="81"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfe-5F-1pD">
+                                        <rect key="frame" x="268" y="19" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="BjC-lk-QqP"/>
+                                            <constraint firstAttribute="height" constant="44" id="L1X-0p-Td9"/>
+                                        </constraints>
+                                        <state key="normal" title="Wait">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="wait:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCC-YS-T3t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkQ-oQ-8be">
+                                        <rect key="frame" x="8" y="19" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="8h3-k8-JKd"/>
+                                            <constraint firstAttribute="height" constant="44" id="9zV-c0-5bS"/>
+                                        </constraints>
+                                        <state key="normal" title="Bomb">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bomb:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah4-Ap-x1x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alm-uv-bHp">
+                                        <rect key="frame" x="90" y="19" width="140" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="0Tj-3D-WUM"/>
+                                            <constraint firstAttribute="width" constant="140" id="QNl-MO-GqS"/>
+                                        </constraints>
+                                        <state key="normal" title="Teleport">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="teleport:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rsk-S7-Zyl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-sT-MAI">
+                                        <rect key="frame" x="90" y="19" width="140" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ccD-Pp-O6y"/>
+                                            <constraint firstAttribute="width" constant="140" id="vfC-72-1SY"/>
+                                        </constraints>
+                                        <state key="normal" title="Restart">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2e2-x5-P8R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZc-zb-jJu">
+                                        <rect key="frame" x="90" y="19" width="140" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="2da-eq-QtH"/>
+                                            <constraint firstAttribute="width" constant="140" id="8KX-gj-tg7"/>
+                                        </constraints>
+                                        <state key="normal" title="Level Up!">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="levelUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQN-zO-FiW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="qWW-3b-q8S"/>
+                                    <constraint firstAttribute="centerX" secondItem="OZN-sT-MAI" secondAttribute="centerX" id="0J9-Ig-waY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pfe-5F-1pD" secondAttribute="trailing" constant="8" id="AQm-bl-v7J"/>
+                                    <constraint firstItem="OZN-sT-MAI" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="top" constant="19" id="Mir-bp-hV0"/>
+                                    <constraint firstItem="Pfe-5F-1pD" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="top" constant="19" id="O06-oP-iEY"/>
+                                    <constraint firstItem="VkQ-oQ-8be" firstAttribute="leading" secondItem="eic-to-EM6" secondAttribute="leading" constant="8" id="U6H-Mr-5J6"/>
+                                    <constraint firstItem="VkQ-oQ-8be" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="top" constant="19" id="X20-Ga-jkT"/>
+                                    <constraint firstAttribute="width" constant="320" id="ZRu-5s-Had"/>
+                                    <constraint firstAttribute="height" constant="81" id="d17-fp-avw"/>
+                                    <constraint firstAttribute="centerX" secondItem="Alm-uv-bHp" secondAttribute="centerX" id="jga-rp-BfG"/>
+                                    <constraint firstItem="SZc-zb-jJu" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="top" constant="19" id="tfb-41-dVS"/>
+                                    <constraint firstAttribute="centerX" secondItem="SZc-zb-jJu" secondAttribute="centerX" id="xCK-po-aCn"/>
+                                    <constraint firstItem="Alm-uv-bHp" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="top" constant="19" id="yp6-Ag-9Ed"/>
                                 </constraints>
-                                <state key="normal" title="Teleport">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="teleport:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rsk-S7-Zyl"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -93,12 +142,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hc8-PQ-NHF" secondAttribute="trailing" priority="900" constant="-16" id="0rP-zL-ovF"/>
                             <constraint firstItem="hc8-PQ-NHF" firstAttribute="top" secondItem="roa-Ob-5JL" secondAttribute="bottom" constant="23" id="6Qf-kY-8di"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hc8-PQ-NHF" secondAttribute="bottom" constant="80" id="6co-Ry-KYP"/>
+                            <constraint firstAttribute="centerX" secondItem="eic-to-EM6" secondAttribute="centerX" id="7Dj-E7-oSm"/>
                             <constraint firstItem="roa-Ob-5JL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LLz-eg-m9V"/>
+                            <constraint firstItem="XuI-yL-G8j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Yoe-yy-eac"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XuI-yL-G8j" secondAttribute="trailing" constant="-7" id="fOs-Ew-mSC"/>
                             <constraint firstItem="JBP-9B-6bf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-31" id="gOk-GZ-KiT"/>
                             <constraint firstAttribute="centerX" secondItem="hc8-PQ-NHF" secondAttribute="centerX" id="gta-UY-CUm"/>
                             <constraint firstItem="JBP-9B-6bf" firstAttribute="leading" secondItem="roa-Ob-5JL" secondAttribute="trailing" id="hIx-DW-Imb"/>
                             <constraint firstItem="hc8-PQ-NHF" firstAttribute="top" secondItem="JBP-9B-6bf" secondAttribute="bottom" constant="19" id="qCV-TB-sUa"/>
                             <constraint firstItem="hc8-PQ-NHF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" priority="900" constant="-16" id="v6T-b3-TjB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eic-to-EM6" secondAttribute="bottom" id="wcG-ug-KXN"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -107,6 +160,8 @@
                         <outlet property="arenaView" destination="hc8-PQ-NHF" id="Jpp-sW-1OG"/>
                         <outlet property="bombButton" destination="VkQ-oQ-8be" id="GKH-Rk-bbb"/>
                         <outlet property="levelLabel" destination="roa-Ob-5JL" id="QOk-At-mRY"/>
+                        <outlet property="levelUpButton" destination="SZc-zb-jJu" id="WYw-od-QCD"/>
+                        <outlet property="restartButton" destination="OZN-sT-MAI" id="G1R-23-fSm"/>
                         <outlet property="teleportButton" destination="Alm-uv-bHp" id="3sY-k4-qW6"/>
                         <outlet property="waitButton" destination="Pfe-5F-1pD" id="R9T-OZ-1pC"/>
                     </connections>
