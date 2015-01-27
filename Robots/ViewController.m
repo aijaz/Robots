@@ -65,9 +65,9 @@
     UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     [self.view addGestureRecognizer:pan];
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    [self.arenaView addGestureRecognizer:tap];
+    [self.view addGestureRecognizer:tap];
     UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-    [self.arenaView addGestureRecognizer:longPress];
+    [self.view addGestureRecognizer:longPress];
 
     self.restartButton.hidden = YES;
     self.levelUpButton.hidden = YES;
@@ -313,7 +313,7 @@
     
     [self moveToSpot:5];
 
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25
                                                   target:self
                                                 selector:@selector(handleTimer:)
                                                 userInfo:nil
