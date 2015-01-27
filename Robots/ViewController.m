@@ -33,10 +33,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *bs;
 @property (weak, nonatomic) IBOutlet UIButton *bse;
 @property (weak, nonatomic) IBOutlet UIButton *teleportButton;
-@property (weak, nonatomic) IBOutlet UIButton *safeTeleportButton;
 @property (weak, nonatomic) IBOutlet UIButton *bombButton;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *waitButton;
+@property (assign, nonatomic) BOOL inWait;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -74,6 +76,8 @@
 #pragma mark - Gesture Recognizers
 
 -(void) pan: (UIPanGestureRecognizer *) pan {
+    if (self.timer) { return; }
+    
     switch (pan.state) {
         case UIGestureRecognizerStateBegan: {
             
@@ -97,11 +101,15 @@
 
 
 -(void) tap: (UITapGestureRecognizer *) tap {
+    if (self.timer) { return; }
+    
     [self moveToSpot:5];
 }
 
 
 -(void) longPress: (UILongPressGestureRecognizer *) longPress {
+    if (self.timer) { return; }
+    
 }
 
 
@@ -109,7 +117,6 @@
     CGFloat radians = atan2f(-point.y, point.x);
     CGFloat degrees = ((radians * 180) / M_PI);
     if (degrees < 0) { degrees = 360 + degrees; }
-    NSLog(@"degrees is %.1f", degrees);
 
     if (degrees < 0 + 22.5) {
         return 6;
@@ -214,25 +221,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)handleMove:(UIButton *)sender {
-    NSInteger spot = 0;
-    if (sender == self.bnw) { spot = 1; }
-    else if (sender == self.bn) { spot = 2; }
-    else if (sender == self.bne) { spot = 3; }
-    else if (sender == self.bw) { spot = 4; }
-    else if (sender == self.bc) { spot = 5; }
-    else if (sender == self.be) { spot = 6; }
-    else if (sender == self.bsw) { spot = 7; }
-    else if (sender == self.bs) { spot = 8; }
-    else if (sender == self.bse) { spot = 9; }
-    
-    [self.arena movePlayerToSpot:spot];
-    if (self.arena.player.isDead) {
-        self.arenaView.gameOver = YES;
-    }
-    
-    [self translateFromModelToView];
-}
 
 -(void) translateFromModelToView {
     
@@ -259,25 +247,12 @@
 -(void) refreshScreen {
     [self.arenaView setNeedsDisplay];
     
-    NSDictionary * validMoves = [self.arena validMoves];
-    
-    if (validMoves[@1]) { self.bnw.enabled = YES; } else { self.bnw.enabled = NO; }
-    if (validMoves[@2]) { self.bn.enabled = YES; } else { self.bn.enabled = NO; }
-    if (validMoves[@3]) { self.bne.enabled = YES; } else { self.bne.enabled = NO; }
-    if (validMoves[@4]) { self.bw.enabled = YES; } else { self.bw.enabled = NO; }
-    if (validMoves[@5]) { self.bc.enabled = YES; } else { self.bc.enabled = NO; }
-    if (validMoves[@6]) { self.be.enabled = YES; } else { self.be.enabled = NO; }
-    if (validMoves[@7]) { self.bsw.enabled = YES; } else { self.bsw.enabled = NO; }
-    if (validMoves[@8]) { self.bs.enabled = YES; } else { self.bs.enabled = NO; }
-    if (validMoves[@9]) { self.bse.enabled = YES; } else { self.bse.enabled = NO; }
     
     if (self.arena.safeTeleportsLeft) {
-        self.safeTeleportButton.enabled = YES;
-        [self.safeTeleportButton setTitle:[NSString stringWithFormat:@"st: %zd", self.arena.safeTeleportsLeft] forState:UIControlStateNormal];
+        [self.teleportButton setTitle: [NSString stringWithFormat:@"Safe Teleport: %zd", self.arena.safeTeleportsLeft] forState:UIControlStateNormal];
     }
     else {
-        self.safeTeleportButton.enabled = NO;
-        [self.safeTeleportButton setTitle:@"st" forState:UIControlStateNormal];
+        [self.teleportButton setTitle: @"Teleport" forState:UIControlStateNormal];
     }
     
     if (self.arena.bombsLeft) {
@@ -288,6 +263,10 @@
     }
     
     if ([self.arena.robots count] == 0) {
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
         [self.arena startLevel:self.arena.level + 1];
         [self translateFromModelToView];
     }
@@ -295,21 +274,50 @@
 }
 
 - (IBAction)teleport:(UIButton *)sender {
-    [self.arena teleport];
+    if (self.timer) { return; }
+    
+    if (self.arena.safeTeleportsLeft) {
+        [self.arena safeTeleport];
+    }
+    else {
+        [self.arena teleport];
+    }
+    
     
     [self translateFromModelToView];
 }
 
-- (IBAction)safeTeleport:(UIButton *)sender {
-    [self.arena safeTeleport];
-    
-    [self translateFromModelToView];
-}
 
 - (IBAction)bomb:(UIButton *)sender {
+    if (self.timer) { return; }
+    
+}
+
+- (IBAction)wait:(id)sender {
+    if (self.timer) { return; }
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                  target:self
+                                                selector:@selector(handleTimer:)
+                                                userInfo:nil
+                                                 repeats:YES];
+    
+    
+}
+
+-(void) handleTimer: (id) sender {
+    if ( ([self.arena.robots count] == 0) || self.arena.player.isDead) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    else {
+        [self moveToSpot:5];
+    }
 }
 
 - (IBAction)restart:(id)sender {
+    if (self.timer) { return; }
+    
     [self.arena restartGame];
     self.arenaView.gameOver = NO;
     [self translateFromModelToView];

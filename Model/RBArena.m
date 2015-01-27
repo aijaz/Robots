@@ -103,6 +103,7 @@
     return self;
 }
 
+
 // The spot is a relative location based on the current location of the player
 // 1 2 3
 // 4 5 6

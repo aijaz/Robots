@@ -71,4 +71,5 @@
 // accept input from user - translate it to a move
 -(void) acceptInput;
 
+
 @end
