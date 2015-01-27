@@ -42,6 +42,7 @@
         // (we haven't spoken about integer division yet)
         _playerStartX = (NSInteger)(_width/2);
         _playerStartY = (NSInteger)(_height/2);
+        _score = 0;
         
         _level = 1;
         
@@ -190,14 +191,20 @@
                 RBDebris * newDebris = [[RBDebris alloc] init];
                 [self moveItem:newDebris toX:robotX andY:robotY];
                 [self.debris addObject:newDebris];
+                self.score += 50;
             }
             else if ([self.board[robotY][robotX] class] == [RBDebris class]) {
                 // there is debris there
                 // don't add this robot to the newRobotSet
+                self.score += 100;
             }
         }
     }
     
+    if (!self.player.isDead) {
+        self.score += (5 * (self.level)); // add to score for every move you stay alive
+        self.score += (5 * ([self.robots count] - [newRobotSet count])); // more points the higher the delta is
+    }
     // replace the set of robots
     self.robots = newRobotSet;
     
@@ -467,6 +474,7 @@
 // restart the game after the player dies (always from level 1)
 -(void) restartGame {
     [self.player updatePlayerStatus:NO];
+    self.score = 0;
     [self startLevel:1];
 }
 

@@ -23,15 +23,6 @@
 
 // View
 @property (weak, nonatomic) IBOutlet ArenaView *arenaView;
-@property (weak, nonatomic) IBOutlet UIButton *bnw;
-@property (weak, nonatomic) IBOutlet UIButton *bn;
-@property (weak, nonatomic) IBOutlet UIButton *bne;
-@property (weak, nonatomic) IBOutlet UIButton *bw;
-@property (weak, nonatomic) IBOutlet UIButton *bc;
-@property (weak, nonatomic) IBOutlet UIButton *be;
-@property (weak, nonatomic) IBOutlet UIButton *bsw;
-@property (weak, nonatomic) IBOutlet UIButton *bs;
-@property (weak, nonatomic) IBOutlet UIButton *bse;
 @property (weak, nonatomic) IBOutlet UIButton *teleportButton;
 @property (weak, nonatomic) IBOutlet UIButton *bombButton;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
@@ -40,6 +31,8 @@
 @property (assign, nonatomic) BOOL inWait;
 @property (strong, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UIButton *levelUpButton;
+@property (assign, nonatomic) NSInteger numberOfWaitMoves;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
@@ -273,15 +266,22 @@
     }
     
     if ([self.arena.robots count] == 0 && !self.arena.player.isDead) {
+        // level up
         if (self.timer) {
             [self.timer invalidate];
             self.timer = nil;
+            self.arena.score += ((self.numberOfWaitMoves - 1) * 125);
+            self.numberOfWaitMoves = 0;
         }
+        self.arena.score += (200 * self.arena.safeTeleportsLeft);
+        self.arena.score += (400 * self.arena.bombsLeft);
         self.levelUpButton.hidden = NO;
         self.bombButton.hidden = YES;
         self.teleportButton.hidden = YES;
         self.waitButton.hidden = YES;
     }
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %zd", self.arena.score];
     
 }
 
@@ -311,6 +311,7 @@
     if (self.timer) { return; }
     if (self.arena.player.isDead) { return; }
     
+    self.numberOfWaitMoves = 1;
     [self moveToSpot:5];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.25
@@ -327,6 +328,7 @@
     self.teleportButton.hidden = NO;
     self.waitButton.hidden = NO;
     self.levelUpButton.hidden = YES;
+    self.numberOfWaitMoves = 0;
     [self.arena startLevel:self.arena.level + 1];
     [self translateFromModelToView];
 }
@@ -337,6 +339,7 @@
         self.timer = nil;
     }
     else {
+        self.numberOfWaitMoves += 1;
         [self moveToSpot:5];
     }
 }
@@ -348,6 +351,7 @@
     self.teleportButton.hidden = NO;
     self.waitButton.hidden = NO;
     self.restartButton.hidden = YES;
+    self.numberOfWaitMoves = 0;
     
     [self.arena restartGame];
     self.arenaView.gameOver = NO;

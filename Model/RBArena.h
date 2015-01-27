@@ -41,6 +41,9 @@
 // debris
 @property (strong, nonatomic) NSMutableSet * debris;
 
+// score
+@property (assign, nonatomic) NSInteger score;
+
 
 // METHODS
 

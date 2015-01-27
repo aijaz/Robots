@@ -162,6 +162,7 @@
                         <outlet property="levelLabel" destination="roa-Ob-5JL" id="QOk-At-mRY"/>
                         <outlet property="levelUpButton" destination="SZc-zb-jJu" id="WYw-od-QCD"/>
                         <outlet property="restartButton" destination="OZN-sT-MAI" id="G1R-23-fSm"/>
+                        <outlet property="scoreLabel" destination="JBP-9B-6bf" id="Pi8-cf-8Vy"/>
                         <outlet property="teleportButton" destination="Alm-uv-bHp" id="3sY-k4-qW6"/>
                         <outlet property="waitButton" destination="Pfe-5F-1pD" id="R9T-OZ-1pC"/>
                     </connections>
