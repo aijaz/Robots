@@ -260,9 +260,11 @@
     
     if (self.arena.bombsLeft) {
         self.bombButton.enabled = YES;
+        [self.bombButton setTitle:[NSString stringWithFormat:@"Bomb: %zd", self.arena.bombsLeft] forState:UIControlStateNormal];
     }
     else {
         self.bombButton.enabled = NO;
+        [self.bombButton setTitle:@"Bomb" forState:UIControlStateNormal];
     }
     
     if ([self.arena.robots count] == 0 && !self.arena.player.isDead) {
@@ -304,6 +306,11 @@
 - (IBAction)bomb:(UIButton *)sender {
     if (self.timer) { return; }
     if (self.arena.player.isDead) { return; }
+    
+    if (self.arena.bombsLeft) {
+        [self.arena bomb];
+        [self translateFromModelToView];
+    }
 
 }
 

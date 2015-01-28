@@ -30,8 +30,8 @@
     self = [super init];
     if (self) {
         // custom initialization
-        _width = 15;
-        _height = 15;
+        _width = 19;
+        _height = 19;
         
         // _ _ _ _ _ _ _ _ _
         // 0 1 2 3 4 5 6 7 8
@@ -287,8 +287,8 @@
         
     }
     
-    _safeTeleportsLeft = (level/2) + 1;
-    _bombsLeft = level/4;
+    _safeTeleportsLeft += (level/2) + 1;
+    _bombsLeft += level / 4;
 }
 
 -(void) moveItem: (RBItem *) item toX: (NSInteger) x andY: (NSInteger) y {
@@ -464,7 +464,20 @@
 
 // detonate a bomb - kill any robots that are adjacent to you
 -(void) bomb {
-    
+    if (self.bombsLeft) {
+        _bombsLeft = self.bombsLeft - 1;
+        for (NSInteger y = self.player.y - 1; y <= self.player.y + 1; y++) {
+            for (NSInteger x = self.player.x - 1; x <= self.player.x + 1; x++) {
+                if (y >= 0 && x >= 0 && y < self.width && x < self.width) {
+                    if ([self.board[y][x] class] == [RBRobot class]) {
+                        RBRobot * bombedRobot = self.board[y][x];
+                        [self.robots removeObject:bombedRobot];
+                        self.board[y][x] = [NSNull null];
+                    }
+                }
+            }
+        }
+    }
 }
 
 // accept input from user - translate it to a move
