@@ -66,7 +66,7 @@
     self.levelUpButton.hidden = YES;
 
     
-    [self refreshScreen];
+    [self translateFromModelToView];
 
 }
 
