@@ -41,6 +41,9 @@
 // debris
 @property (strong, nonatomic) NSMutableSet * debris;
 
+// score
+@property (assign, nonatomic) NSInteger score;
+
 
 // METHODS
 
@@ -70,5 +73,6 @@
 
 // accept input from user - translate it to a move
 -(void) acceptInput;
+
 
 @end

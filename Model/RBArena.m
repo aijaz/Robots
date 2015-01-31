@@ -30,8 +30,8 @@
     self = [super init];
     if (self) {
         // custom initialization
-        _width = 15;
-        _height = 15;
+        _width = 19;
+        _height = 19;
         
         // _ _ _ _ _ _ _ _ _
         // 0 1 2 3 4 5 6 7 8
@@ -42,6 +42,7 @@
         // (we haven't spoken about integer division yet)
         _playerStartX = (NSInteger)(_width/2);
         _playerStartY = (NSInteger)(_height/2);
+        _score = 0;
         
         _level = 1;
         
@@ -102,6 +103,7 @@
     }
     return self;
 }
+
 
 // The spot is a relative location based on the current location of the player
 // 1 2 3
@@ -189,14 +191,20 @@
                 RBDebris * newDebris = [[RBDebris alloc] init];
                 [self moveItem:newDebris toX:robotX andY:robotY];
                 [self.debris addObject:newDebris];
+                self.score += 50;
             }
             else if ([self.board[robotY][robotX] class] == [RBDebris class]) {
                 // there is debris there
                 // don't add this robot to the newRobotSet
+                self.score += 100;
             }
         }
     }
     
+    if (!self.player.isDead) {
+        self.score += (5 * (self.level)); // add to score for every move you stay alive
+        self.score += (5 * ([self.robots count] - [newRobotSet count])); // more points the higher the delta is
+    }
     // replace the set of robots
     self.robots = newRobotSet;
     
@@ -279,8 +287,8 @@
         
     }
     
-    _safeTeleportsLeft = (level/2) + 1;
-    _bombsLeft = level/4;
+    _safeTeleportsLeft += (level/2) + 1;
+    _bombsLeft += level / 4;
 }
 
 -(void) moveItem: (RBItem *) item toX: (NSInteger) x andY: (NSInteger) y {
@@ -456,7 +464,20 @@
 
 // detonate a bomb - kill any robots that are adjacent to you
 -(void) bomb {
-    
+    if (self.bombsLeft) {
+        _bombsLeft = self.bombsLeft - 1;
+        for (NSInteger y = self.player.y - 1; y <= self.player.y + 1; y++) {
+            for (NSInteger x = self.player.x - 1; x <= self.player.x + 1; x++) {
+                if (y >= 0 && x >= 0 && y < self.width && x < self.width) {
+                    if ([self.board[y][x] class] == [RBRobot class]) {
+                        RBRobot * bombedRobot = self.board[y][x];
+                        [self.robots removeObject:bombedRobot];
+                        self.board[y][x] = [NSNull null];
+                    }
+                }
+            }
+        }
+    }
 }
 
 // accept input from user - translate it to a move
@@ -465,7 +486,9 @@
 
 // restart the game after the player dies (always from level 1)
 -(void) restartGame {
-    
+    [self.player updatePlayerStatus:NO];
+    self.score = 0;
+    [self startLevel:1];
 }
 
 
